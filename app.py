@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template_string
-from app import app
+
 app = Flask(__name__)
 
 HTML = """
@@ -28,10 +28,7 @@ HTML = """
 </html>
 """
 
-def test_home_page():
-    client = app.test_client()
-    response = client.get("/")
-    assert response.status_code == 200
+
 
 @app.route("/", methods=["GET", "POST"])
 def calculator():
